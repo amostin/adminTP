@@ -11,7 +11,7 @@ RUN ["/bin/bash", "-c", "debconf-set-selections <<< 'mysql-server mysql-server/r
 RUN apt install -y mysql-server nano
 
 # Copie les fichiers de la base de données
-ADD initDB uneDB.sql mysqld.cnf /tmp/
+ADD initDB uneDB.sql  /tmp/
 COPY mysqld.cnf /etc/mysql/mysql.conf.d/
 
 

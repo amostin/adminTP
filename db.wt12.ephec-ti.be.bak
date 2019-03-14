@@ -8,7 +8,7 @@ $TTL	3600
 			86400		; Expire
 			 600 )	; Negative Cache TTL
 
-@       IN      NS      ns.wt12.ephec-ti.be
+@       IN      NS      ns
 ns      IN      A       51.77.203.31
 mail    IN      A      	51.77.203.28
         IN      A       51.77.203.31

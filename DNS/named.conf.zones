@@ -1,7 +1,4 @@
 // ce fichier est utile donner la connaissance des serveurs racines et faire autorité sur l'hôte local
-
-
-
 // amorcer le serveur avec la connaissance des serveurs racine
 zone "." {
 	type hint;

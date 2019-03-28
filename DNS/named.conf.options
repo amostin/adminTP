@@ -1,3 +1,8 @@
+
+
+//ce fichier est utile aux configurations optionnelles
+
+//access control list = liste des ip controlées
 acl ip_interne { 
 
 	51.77.203.28; 
@@ -6,6 +11,8 @@ acl ip_interne {
 
 
 };
+
+
 options {
 
 				directory "/var/cache/bind";
@@ -18,22 +25,24 @@ options {
 				// nameservers, you probably want to use them as forwarders.  
 				// Uncomment the following block, and insert the addresses replacing 
 				// the all-0's placeholder.
-
+				
+				// serveur qui va relayer la requete à travers l'internet
 				forwarders {
+					// dns de google
 				 	8.8.8.8;
 				 	8.8.4.4;
-			};    
+				};    
 				
 				//========================================================================
 				// If BIND logs error messages about the root key being expired,
 				// you will need to update your keys.  See https://www.isc.org/bind-keys
 				//========================================================================
-	
-				dnssec-enable yes;
+		// sécurité
+		dnssec-enable yes;
         dnssec-validation auto;
         dnssec-lookaside auto;
         
-      
+		// autorisations
         allow-transfer { none; };
         allow-query { ip_interne; };
         allow-recursion { ip_interne; };

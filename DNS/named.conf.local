@@ -1,6 +1,6 @@
-// do any local configuration here
+// ce fichier contient les configurations locales: la définition des vue interne et externe à l'entreprise
 
-
+// la liste des ip controlées
 acl ip_interne { 
 
 	51.77.203.28; 
@@ -10,7 +10,7 @@ acl ip_interne {
 
 };
 
-
+// vue interne: accepte que les ip internes, defini un zone
 view internal {
 	match-clients { ip_interne; };
     recursion yes;
@@ -21,7 +21,7 @@ view internal {
     };
 };
 
-
+// vue externe: accepte toute les ip, defini une zone
 view external {
     match-clients { any; };
     zone "wt12.ephec-ti.be" {
